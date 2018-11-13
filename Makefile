@@ -1,13 +1,6 @@
+GOCMD=GO111MODULE=on go
 
-.PHONY: install update test all
-
-all: install test
+.PHONY: test
 
 test:
-	go test -v ./...
-
-install:
-	glide install
-
-update:
-	glide update
+	$(GOCMD) test -v ./...
